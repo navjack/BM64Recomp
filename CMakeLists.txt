@@ -23,6 +23,9 @@ endif()
 
 if (APPLE)
     enable_language(OBJC OBJCXX)
+    # rt64 forces HLSLPP_SCALAR on Apple Silicon and hlslpp's scalar.h calls labs() without
+    # including <stdlib.h>. SHELL: stops CMake de-duplicating the repeated -include token.
+    add_compile_options("SHELL:-include stdlib.h")
 endif()
 
 if (CMAKE_SYSTEM_NAME MATCHES "Linux")

@@ -73,3 +73,6 @@ gamecontrollerdb.txt
 
 # RSP Microcode recompiled output
 aspMain.cpp
+
+# --- macOS port: build artifacts, ROMs and local machine state ---
+*.app/
